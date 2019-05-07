@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "query": {
+            "required": true,
+            "type": "string"
+        },
+        "limit": {
+            "required": false,
+            "type": "number",
+            "default": 10
+        },
+        "offset": {
+            "required": false,
+            "type": "number"
+        },
+        "app_token": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

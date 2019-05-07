@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "variable": {
+            "required": true,
+            "type": "string"
+        },
+        "entity_id": {
+            "required": true,
+            "type": "string"
+        },
+        "constraint": {
+            "required": true,
+            "type": "string"
+        },
+        "app_token": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

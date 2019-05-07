@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "type": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "entity",
+                "category",
+                "publisher",
+                "dataset",
+                "question"
+            ]
+        },
+        "query": {
+            "required": true,
+            "type": "string"
+        },
+        "limit": {
+            "required": false,
+            "type": "number",
+            "default": 5
+        },
+        "variable_id": {
+            "required": false,
+            "type": "string"
+        },
+        "app_token": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

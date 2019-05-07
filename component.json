@@ -1,0 +1,187 @@
+{
+    "title": "ODN",
+    "description": "The Socrata OpenDataNetwork (ODN) REST API exposes public data, often continuosly updated and enhanced, from many thousands of public\ngovernment and non profit agencies.\n\nMuch of this data originating from independent sources is fused together to create new, and often\npowerful, entity level data. The API, in addition to search and autosuggest capabilities for finding datasets,\nenables data based comparisons across geographical regions such as states, counties, metropolitan areas,\ncities and zip codes using highly vetted data providers such as US Census, BEA, HUD and others. Comparison data\nis preformatted for easy and efficient display on a chart, graph or interactive map.\n\nThe API also exposes data organized by narrative style questions a human might ask. The questions can\nbe rapidly found using an autosuggest style index, and then used to directly access all data needed to\nthoroughly and authoritatively answer the question. Retrieved data includes time series (temporally aligned),\ntabular, map heavy (includes spatial boundaries), and auto generated unstructured descriptive text.\n\nThe ODN API does not duplicate API endpoints or services provided by public sector agencies, but rather,\nreturns context relevant pre-populated REST URLs, when appropriate, so the caller can access data\ndirectly from the source.\n\nThe [open source](http://github.com/socrata/odn-backend) API powers [OpenDataNetwork.com](http://OpenDataNetwork.com), an [open source](http://github.com/socrata/opendatanetwork.com)\nsite; the site highlights myriad uses and provides API badges with contextually relevant API example\nREST endpoints and documentation pointers.\n\nFinally, we continuously add new dat sources which appear automatically in the API, so if your favorite data\nsource is not available, check back soon. You can also join us [HERE](http://www.opendatanetwork.com/join-open-data-network)\nand receive updates or let us know which data sources you are most interested in.\n\n## App Tokens\n\nRegistering for and including a [Socrata application token](https://dev.socrata.com/docs/app-tokens.html)\nis _required_ for the ODN API. They can be passed either using the `app_token` parameter\nor the `X-App-Token` HTTP header.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/opendatanetwork.com/1.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://api.opendatanetwork.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_data_v1_availability_": {
+            "main": "./lib/actions/get_data_v1_availability_.js",
+            "title": "Find all available data for some entities",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_data_v1_availability_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_data_v1_constraint__variable_": {
+            "main": "./lib/actions/get_data_v1_constraint__variable_.js",
+            "title": "Get constraint permutations for entities",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_data_v1_constraint__variable_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_data_v1_map_new": {
+            "main": "./lib/actions/get_data_v1_map_new.js",
+            "title": "Create a map",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_data_v1_map_new.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_data_v1_values": {
+            "main": "./lib/actions/get_data_v1_values.js",
+            "title": "Get values for variables",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_data_v1_values.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_entity_v1": {
+            "main": "./lib/actions/get_entity_v1.js",
+            "title": "Get Entities",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_entity_v1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_entity_v1__relation_": {
+            "main": "./lib/actions/get_entity_v1__relation_.js",
+            "title": "Find the relatives of an entity",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_entity_v1__relation_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_search_v1_dataset": {
+            "main": "./lib/actions/get_search_v1_dataset.js",
+            "title": "Get datasets",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_search_v1_dataset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_search_v1_question": {
+            "main": "./lib/actions/get_search_v1_question.js",
+            "title": "Get questions",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_search_v1_question.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_suggest_v1__type_": {
+            "main": "./lib/actions/get_suggest_v1__type_.js",
+            "title": "Get suggestions",
+            "description": "",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_suggest_v1__type_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "variable": {
+            "required": true,
+            "type": "string"
+        },
+        "entity_id": {
+            "required": false,
+            "type": "string"
+        },
+        "forecast": {
+            "required": false,
+            "type": "number"
+        },
+        "describe": {
+            "required": false,
+            "type": "boolean"
+        },
+        "format": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "google"
+            ]
+        },
+        "app_token": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
